@@ -44,7 +44,7 @@ const classes: Array<ClassType> = [
     image: Image5,
   },
   {
-    name: 'Yogaclasses',
+    name: 'Yoga classes',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     image: Image6,
