@@ -11,6 +11,7 @@ const config: Config.InitialOptions = {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^@heroicons/(.*)$': '<rootDir>/node_modules/@heroicons/$1',
   },
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
 };
 
 export default config;

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Benefit from '@/scenes/benefits/Benefit';
 
-describe('<Benefits /> Tests', () => {
+describe('<Benefit /> Tests', () => {
   const mockSetSelectedPage = jest.fn();
   beforeEach(() => {
     render(
@@ -23,13 +23,11 @@ describe('<Benefits /> Tests', () => {
     expect(screen.getByLabelText(/benefit icon/i)).toBeInTheDocument();
   });
 
-  it.only('Checks link element is rendered and clickable', () => {
+  it('Checks link element is rendered and clickable', () => {
     const learnMoreLink = screen.getByRole('link', {
       name: /learn more/i,
     });
     expect(learnMoreLink).toBeInTheDocument();
-
-    // fireEvent.click(learnMoreLink);
-    // expect(mockSetSelectedPage).toHaveBeenCalledWith(SelectedPage.ContactUs);
+    expect(learnMoreLink).toHaveAttribute('href', '#contactus');
   });
 });
