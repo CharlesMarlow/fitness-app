@@ -1,20 +1,22 @@
-import { motion } from "framer-motion";
-import useMediaQuery from "@/hooks/useMediaQuery";
-import { SelectedPage } from "@/shared/types";
-import ActionButton from "@/shared/ActionButton";
-import HomePageText from "@/assets/HomePageText.png";
-import HomePageGraphic from "@/assets/HomePageGraphic.png";
-import SponsorRedBull from "@/assets/SponsorRedBull.png";
-import SponsorForbes from "@/assets/SponsorForbes.png";
-import SponsorFortune from "@/assets/SponsorFortune.png";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import { SelectedPage } from '@/shared/types';
+import ActionButton from '@/shared/ActionButton';
+import HomePageText from '@/assets/HomePageText.png';
+import HomePageGraphic from '@/assets/HomePageGraphic.png';
+import SponsorRedBull from '@/assets/SponsorRedBull.png';
+import SponsorForbes from '@/assets/SponsorForbes.png';
+import SponsorFortune from '@/assets/SponsorFortune.png';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
-type Props = {
+type HomeProps = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Home = ({ setSelectedPage }: Props) => {
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+const Home = ({ setSelectedPage }: HomeProps) => {
+  const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+  const { t } = useTranslation();
 
   return (
     <section id="home" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
@@ -43,11 +45,7 @@ const Home = ({ setSelectedPage }: Props) => {
               </div>
             </div>
 
-            <p className="mt-8 text-sm">
-              Gym life. Unparalleled Training Fitness Classes. World Class
-              Studios. Get Your Dream
-              Body Now.
-            </p>
+            <p className="mt-8 text-sm">{t('home.title')}</p>
           </motion.div>
 
           {/* ACTIONS */}
@@ -63,14 +61,14 @@ const Home = ({ setSelectedPage }: Props) => {
             }}
           >
             <ActionButton setSelectedPage={setSelectedPage}>
-              Join
+              {t('home.join')}
             </ActionButton>
             <AnchorLink
               className="text-sm font-bold text-primary-500 hover:text-secondary-500"
               onClick={() => setSelectedPage(SelectedPage.ContactUs)}
               href={`#${SelectedPage.ContactUs}`}
             >
-              <p>Learn More</p>
+              <p>{t('common.learnMore')}</p>
             </AnchorLink>
           </motion.div>
         </div>

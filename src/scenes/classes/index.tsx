@@ -9,49 +9,46 @@ import Image6 from '@/assets/image6.png';
 import HeaderText from '@/shared/HeaderText';
 import { ClassType } from '@/shared/types';
 import Class from './Class';
+import { useTranslation } from 'react-i18next';
 
-type Props = {
+type ClassesProps = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const classes: Array<ClassType> = [
-  {
-    name: 'Weight training classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: Image1,
-  },
-  {
-    name: 'Fitness classes',
-    image: Image2,
-  },
-  {
-    name: 'Training classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: Image3,
-  },
-  {
-    name: 'Adventure classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: Image4,
-  },
-  {
-    name: 'Pilates classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: Image5,
-  },
-  {
-    name: 'Yoga classes',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    image: Image6,
-  },
-];
+const Classes = ({ setSelectedPage }: ClassesProps) => {
+  const { t } = useTranslation();
+  const classes: Array<ClassType> = [
+    {
+      name: t('classes.heading1'),
+      description: t('common.fillerShort'),
+      image: Image1,
+    },
+    {
+      name: t('classes.heading2'),
+      image: Image2,
+    },
+    {
+      name: t('classes.heading3'),
+      description: t('common.fillerShort'),
+      image: Image3,
+    },
+    {
+      name: t('classes.heading4'),
+      description: t('common.fillerShort'),
+      image: Image4,
+    },
+    {
+      name: t('classes.heading5'),
+      description: t('common.fillerShort'),
+      image: Image5,
+    },
+    {
+      name: t('classes.heading6'),
+      description: t('common.fillerShort'),
+      image: Image6,
+    },
+  ];
 
-const Classes = ({ setSelectedPage }: Props) => {
   return (
     <section id="classes" className="w-full bg-primary-100 py-40">
       <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Classes)}>
@@ -67,14 +64,8 @@ const Classes = ({ setSelectedPage }: Props) => {
           }}
         >
           <div className="md:w-3/5">
-            <HeaderText>Our Classes</HeaderText>
-            <p className="py-5">
-              {' '}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
+            <HeaderText>{t('classes.title')}</HeaderText>
+            <p className="py-5">{t('common.filler')}</p>
           </div>
         </motion.div>
         <div className="mt-10 h-[353px] w-full overflow-x-auto overflow-y-hidden">

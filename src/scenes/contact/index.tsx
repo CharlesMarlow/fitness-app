@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { SelectedPage } from '@/shared/types';
 import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png';
 import HeaderText from '@/shared/HeaderText';
 
-type Props = {
+type ContactProps = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Contact = ({ setSelectedPage }: Props) => {
+const Contact = ({ setSelectedPage }: ContactProps) => {
+  const { t } = useTranslation();
   const inputStyles = `mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white`;
   const {
     register,
@@ -39,12 +41,10 @@ const Contact = ({ setSelectedPage }: Props) => {
           }}
         >
           <HeaderText>
-            <span className="text-primary-500">Join Now</span> To Get In Shape
+            <span className="text-primary-500">{t('contact.titleStrong')}</span>{' '}
+            {t('contact.title')}
           </HeaderText>
-          <p className="my-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
-          </p>
+          <p className="my-5">{t('common.fillerShort')}</p>
         </motion.div>
         {/* Form */}
         <div className="mt-10 justify-between gap-8 md:flex">
@@ -68,7 +68,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               <input
                 className={inputStyles}
                 type="text"
-                placeholder="NAME"
+                placeholder={t('contact.name')}
                 {...register('name', {
                   required: true,
                   maxLength: 100,
@@ -85,7 +85,7 @@ const Contact = ({ setSelectedPage }: Props) => {
               <input
                 className={inputStyles}
                 type="text"
-                placeholder="EMAIL"
+                placeholder={t('contact.email')}
                 {...register('email', {
                   required: true,
                   pattern: emailValidationFormat,
@@ -103,7 +103,7 @@ const Contact = ({ setSelectedPage }: Props) => {
                 className={inputStyles}
                 rows={4}
                 cols={50}
-                placeholder="MESSAGE"
+                placeholder={t('contact.message')}
                 {...register('message', {
                   required: true,
                   maxLength: 2000,
@@ -122,7 +122,7 @@ const Contact = ({ setSelectedPage }: Props) => {
                 type="submit"
                 className="mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white"
               >
-                Submit
+                {t('common.submitButton')}
               </button>
             </form>
           </motion.div>

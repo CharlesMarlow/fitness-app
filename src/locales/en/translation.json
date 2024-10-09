@@ -1,0 +1,59 @@
+{
+  "navbar": {
+    "signIn": "Sign In",
+    "member": "Become a Member",
+    "home": "Home",
+    "benefits": "Benefits",
+    "classes": "Our Classes",
+    "contact": "Contact Us",
+    "classesLink": "Classes"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "filler": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "fillerShort": "'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "cta": "Join now",
+    "submitButton": "Submit"
+  },
+  "home": {
+    "title": "Gym life. Unparalleled Training Fitness Classes. World Class Studios. Get Your Dream Body Now",
+    "join": "Join"
+  },
+  "benefits": {
+    "title": "More than a gym",
+    "description": "We provide you with the equipment, the trainers and the classes you need. We give you what it takes to get to your fitness goals with ease and comfort. We care for each and every member.",
+    "subtitle": "Millions of happy memebers getting",
+    "subtitleStrong": " Fit",
+    "heading1": "State of the art facilities",
+    "heading2": "100's of diverse classes",
+    "heading3": "Expert and pro trainers"
+  },
+  "classes": {
+    "title": "Our Classes",
+    "heading1": "Weight training classes",
+    "heading2": "Fitness classes",
+    "heading3": "Training classes",
+    "heading4": "Adventure classes",
+    "heading5": "Pilates classes",
+    "heading6": "Yoga classes"
+  },
+  "contact": {
+    "titleStrong": "Join Now",
+    "title": "To Get In Shape",
+    "name": "NAME",
+    "email": "EMAIL",
+    "message": "MESSAGE"
+  },
+  "footer": {
+    "copyright": "©Fitness All Rights Reserved.",
+    "links": "Links",
+    "team": "Join the team",
+    "solutions": "B2C Solutions",
+    "fitness": "Why Fitness",
+    "meet": "Meet yourself!",
+    "write": "Write to us",
+    "careers": "Careers",
+    "legal": "Legal",
+    "supportNumber": "(333)444-6565"
+  }
+}

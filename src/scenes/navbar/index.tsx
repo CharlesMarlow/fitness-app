@@ -1,22 +1,32 @@
-import { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Logo from "@/assets/Logo.png";
-import Link from "./Link";
-import { SelectedPage } from "@/shared/types";
-import useMediaQuery from "@/hooks/useMediaQuery";
-import ActionButton from "@/shared/ActionButton";
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import Logo from '@/assets/Logo.png';
+import Link from './Link';
+import { SelectedPage } from '@/shared/types';
+import useMediaQuery from '@/hooks/useMediaQuery';
+import ActionButton from '@/shared/ActionButton';
+import LanguageSwitcher from '@/shared/LanguagesSwitcher';
 
-type Props = {
+type NavbarProps = {
   isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
+  changeLanguage: (lang: string) => void;
 };
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
-  const flexBetween = "flex items-center justify-between";
+const Navbar = ({
+  isTopOfPage,
+  selectedPage,
+  setSelectedPage,
+  changeLanguage,
+}: NavbarProps) => {
+  const { t } = useTranslation();
+
+  const flexBetween = 'flex items-center justify-between';
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const isAboveMediumScreens = useMediaQuery('(min-width:1060px)');
+  const navbarBackground = isTopOfPage ? '' : 'bg-primary-100 drop-shadow';
 
   return (
     <nav>
@@ -33,31 +43,32 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
                   <Link
-                    page="Home"
+                    page={t('navbar.home')}
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Benefits"
+                    page={t('navbar.benefits')}
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Our Classes"
+                    page={t('navbar.classesLink')}
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                   <Link
-                    page="Contact Us"
+                    page={t('navbar.contact')}
                     selectedPage={selectedPage}
                     setSelectedPage={setSelectedPage}
                   />
                 </div>
                 <div className={`${flexBetween} gap-8`}>
-                  <p>Sign In</p>
+                  <p>{t('navbar.signIn')}</p>
                   <ActionButton setSelectedPage={setSelectedPage}>
-                    Become a Member
+                    {t('navbar.member')}
                   </ActionButton>
+                  <LanguageSwitcher changeLanguage={changeLanguage} />
                 </div>
               </div>
             ) : (
@@ -85,22 +96,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           {/* MENU ITEMS */}
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
             <Link
-              page="Home"
+              page={t('navbar.home')}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Benefits"
+              page={t('navbar.benefits')}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Our Classes"
+              page={t('navbar.classes')}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             <Link
-              page="Contact Us"
+              page={t('navbar.contact')}
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
